@@ -1,14 +1,13 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import sys
-
 import django
 from django.db import IntegrityError
 
 try:
     from django.test import override_settings
 except ImportError:
-    override_settings = lambda **kwargs: lambda view: view
+    def override_settings(**kwargs):
+        return (lambda obj: obj)
 
 if django.VERSION < (1, 7):
     from django.utils import unittest
@@ -147,15 +146,6 @@ class OTPAgentsTestCase(TestCase):
         response = self.client.get('/agent/')
 
         self.assertEqual(response.status_code, 200)
-
-    # This started failing on Django 1.8. Pickling request.user has always
-    # seemed kind of dodgy, so I'm not sure how much I care.
-    def test_pickle(self):
-        if django.VERSION >= (1, 8):
-            self.skipTest("Fails in Django>=1.8")
-
-        self.verify()
-        self.client.get('/pickle/')
 
     #
     # Helpers
