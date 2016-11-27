@@ -5,7 +5,8 @@ from functools import partial
 from django.contrib.auth import BACKEND_SESSION_KEY
 from django.contrib.auth.views import login as auth_login
 
-from .forms import OTPAuthenticationForm, OTPTokenForm
+from django_otp import _user_is_anonymous
+from otp_agents.forms import OTPAuthenticationForm, OTPTokenForm
 
 
 def login(request, **kwargs):
@@ -15,7 +16,7 @@ def login(request, **kwargs):
     """
     user = request.user
 
-    if user.is_anonymous() or user.is_verified():
+    if _user_is_anonymous(user) or user.is_verified():
         form = OTPAuthenticationForm
     else:
         form = partial(OTPTokenForm, user)
