@@ -1,5 +1,11 @@
-v0.2.5 - November 27, 2016 - Forward compatbility for Django 2.0
-----------------------------------------------------------------
+v0.2.6 - April 2, 2017 - Django 1.11 compatibility
+--------------------------------------------------
+
+- Minor test fix for Django 1.11.
+
+
+v0.2.5 - November 27, 2016 - Forward compatibility for Django 2.0
+-----------------------------------------------------------------
 
 - Treat :attr:`~django.contrib.auth.models.User.is_authenticated` and
   :attr:`~django.contrib.auth.models.User.is_anonymous` as properties in Django
