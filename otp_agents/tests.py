@@ -9,15 +9,9 @@ except ImportError:
     def override_settings(**kwargs):
         return (lambda obj: obj)
 
-if django.VERSION < (1, 7):
-    from django.utils import unittest
-else:
-    import unittest
-
 from django_otp.tests import TestCase
 
 
-@unittest.skipIf(django.VERSION < (1, 4), "Requires Django 1.4")
 @override_settings(ROOT_URLCONF='otp_agents.test.urls')
 class OTPAgentsTestCase(TestCase):
     def setUp(self):
@@ -196,7 +190,7 @@ class OTPAgentsTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def logout(self):
-        response = self.client.post('/logout/')
+        response = self.client.get('/logout/')
 
         self.assertEqual(response.status_code, 200)
 
