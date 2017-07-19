@@ -34,17 +34,33 @@ extensions = [
 ]
 
 # autodoc and viewcode need valid settings in order to process Django modules.
+import django
 import django.conf
+
 django.conf.settings.configure(
-    DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}}
+    DATABASES={
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+        }
+    },
+    INSTALLED_APPS = [
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+
+        'django_otp',
+        'otp_agents',
+    ]
 )
+django.setup()
 
 intersphinx_mapping = {
-    'python': ('http://docs.python.org/2/', None),
-    'django': ('https://docs.djangoproject.com/en/1.10/',
-               'https://docs.djangoproject.com/en/1.10/_objects/'),
-    'django-otp': ('http://pythonhosted.org/django-otp/', None),
-    'django-agent-trust': ('http://pythonhosted.org/django-agent-trust/', None),
+    'python': ('http://docs.python.org/3/', None),
+    'django': ('https://docs.djangoproject.com/en/1.11/',
+               'https://docs.djangoproject.com/en/1.11/_objects/'),
+    'django-otp': ('http://django-otp-official.readthedocs.io/en/latest/', None),
+    'django-agent-trust': ('http://django-agent-trust-official.readthedocs.io/en/latest/', None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -141,7 +157,7 @@ html_theme = 'default'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+# html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
