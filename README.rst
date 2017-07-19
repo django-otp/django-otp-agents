@@ -1,5 +1,7 @@
 .. vim: ft=rst nospell tw=80
 
+`Package Documentation <http://django-otp-agents.readthedocs.io/>`_
+
 This uses `django-agent-trust`_ to add OTP-based machine authorization to
 django-otp.
 
