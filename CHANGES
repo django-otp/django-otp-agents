@@ -1,3 +1,9 @@
+v0.3.0 - July 19, 2017 - Update support matrix
+----------------------------------------------
+
+- Drop support for versions of Django that are past EOL.
+
+
 v0.2.6 - April 2, 2017 - Django 1.11 compatibility
 --------------------------------------------------
 
