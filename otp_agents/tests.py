@@ -180,7 +180,7 @@ class OTPAgentsTestCase(TestCase):
 
     def add_trust(self, persist=False):
         params = {
-            'otp_device': 'django_otp.plugins.otp_static.models.StaticDevice/1',
+            'otp_device': 'otp_static.staticdevice/1',
             'otp_token': 'alice1',
             'otp_trust_agent': '1' if persist else '',
         }
