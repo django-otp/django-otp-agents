@@ -1,3 +1,11 @@
+v0.5.0 - August 14, 2018 - Django 2.1 support
+---------------------------------------------
+
+- Remove dependencies on old non-class login views.
+
+- Drop support for Django < 1.11.
+
+
 v0.3.0 - July 19, 2017 - Update support matrix
 ----------------------------------------------
 
