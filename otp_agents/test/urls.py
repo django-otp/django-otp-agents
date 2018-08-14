@@ -8,10 +8,10 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^login/$', django.contrib.auth.views.login),
-    url(r'^verify/$', django_otp.views.login),
-    url(r'^trust/$', otp_agents.views.login),
-    url(r'^logout/$', django.contrib.auth.views.logout),
+    url(r'^login/$', django.contrib.auth.views.LoginView.as_view()),
+    url(r'^verify/$', django_otp.views.LoginView.as_view()),
+    url(r'^trust/$', otp_agents.views.LoginView.as_view()),
+    url(r'^logout/$', django.contrib.auth.views.LogoutView.as_view()),
 
     url(r'^otp/$', views.otp_view),
     url(r'^otp2/$', views.otp_view_2),
