@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='django-otp-agents',
-    version='0.3.0',
+    version='0.5.0',
     description="Integration of django-otp and django-agent-trust.",
     long_description=open('README.rst').read(),
     author='Peter Sagerson',
@@ -19,7 +19,7 @@ setup(
     url='https://bitbucket.org/psagers/django-otp',
     license='BSD',
     install_requires=[
-        'django-otp >= 0.4.0',
+        'django-otp >= 0.5.0',
         'django-agent-trust >= 0.1.8',
     ],
     classifiers=[

@@ -23,7 +23,7 @@ Views
 -----
 
 .. automodule:: otp_agents.views
-    :members:
+    :members: LoginView
 
 
 Decorators
