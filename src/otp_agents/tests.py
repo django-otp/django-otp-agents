@@ -2,12 +2,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import django
 from django.db import IntegrityError
-
-try:
-    from django.test import override_settings
-except ImportError:
-    def override_settings(**kwargs):
-        return (lambda obj: obj)
+from django.test import override_settings
 
 from django_otp.tests import TestCase
 

@@ -1,7 +1,9 @@
 from django.conf.urls import url
+from django.contrib import admin
 import django.contrib.auth.views
 
 import django_otp.views
+
 import otp_agents.views
 
 from . import views
@@ -18,4 +20,6 @@ urlpatterns = [
     url(r'^otp_advised/$', views.otp_advised_view),
     url(r'^otp_advised_2/$', views.otp_advised_view_2),
     url(r'^agent/$', views.agent_view),
+
+    url(r'^admin/', admin.site.urls),
 ]
