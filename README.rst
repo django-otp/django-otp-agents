@@ -8,8 +8,6 @@
    :target: https://github.com/django-otp/django-otp-agents
    :alt: Source
 
-`Package Documentation <http://django-otp-agents.readthedocs.io/>`_
-
 This uses `django-agent-trust`_ to add OTP-based machine authorization to
 django-otp.
 
