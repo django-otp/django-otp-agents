@@ -1,6 +1,4 @@
-from __future__ import absolute_import, division, print_function, unicode_literals
-
-import django
+from django.apps import apps
 from django.db import IntegrityError
 from django.test import override_settings
 
@@ -22,18 +20,10 @@ class OTPAgentsTestCase(TestCase):
             device.token_set.create(token='alice2')
 
     def _check_for_otp_static(self):
-        if django.VERSION < (1, 7):
-            from django.db.models import get_app
-            try:
-                get_app('otp_static')
-            except Exception:
-                self.skipTest("Requires django_otp.plugins.otp_static")
-        else:
-            from django.apps import apps
-            try:
-                apps.get_app_config('otp_static')
-            except LookupError:
-                self.skipTest("Requires django_otp.plugins.otp_static")
+        try:
+            apps.get_app_config('otp_static')
+        except LookupError:
+            self.skipTest("Requires django_otp.plugins.otp_static")
 
     def test_otp_anonymous(self):
         response = self.client.get('/otp/')
@@ -188,7 +178,3 @@ class OTPAgentsTestCase(TestCase):
         response = self.client.get('/logout/')
 
         self.assertEqual(response.status_code, 200)
-
-
-if django.VERSION < (1, 9):
-    OTPAgentsTestCase.urls = 'otp_agents.test.urls'

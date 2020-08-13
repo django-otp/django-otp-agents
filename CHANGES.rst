@@ -1,3 +1,9 @@
+Unreleased - Drop unsupported Python and Django versions
+------------------------------------------------------------
+
+- Now supports Python>=3.5 and Django>=2.2.
+
+
 v0.5.1 - August 26, 2019 - Housekeeping
 ---------------------------------------
 

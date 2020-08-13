@@ -17,8 +17,8 @@ setup(
     license='BSD',
     classifiers=[
         "Development Status :: 5 - Production/Stable",
-        "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Topic :: Security",
@@ -33,7 +33,7 @@ setup(
     ],
 
     install_requires=[
-        'django-otp >= 0.5.0',
-        'django-agent-trust >= 0.1.8',
+        'django-otp >= 1.0.0',
+        'django-agent-trust >= 1.0.0',
     ],
 )
