@@ -54,7 +54,8 @@ django.conf.settings.configure(
 
         'django_otp',
         'otp_agents',
-    ]
+    ],
+    SECRET_KEY='properly-configured',
 )
 django.setup()
 
