@@ -33,7 +33,7 @@ setup(
     ],
 
     install_requires=[
-        'django-otp >= 1.0.1',
-        'django-agent-trust >= 1.0.1',
+        'django-otp >= 1.0.0',
+        'django-agent-trust >= 1.0.0',
     ],
 )
