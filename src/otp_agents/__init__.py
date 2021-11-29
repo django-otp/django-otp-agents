@@ -1,6 +1,11 @@
+import django
 from django.contrib.auth.signals import user_logged_in
 
 from django_agent_trust import trust_agent, trust_session
+
+
+if django.VERSION < (3, 2):
+    default_app_config = 'otp_agents.apps.DefaultConfig'
 
 
 def _handle_auth_login(sender, request, user, **kwargs):
