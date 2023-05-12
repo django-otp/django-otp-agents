@@ -23,11 +23,6 @@ dependencies = [
     "django-agent-trust~=1.0",
 ]
 
-[project.optional-dependencies]
-qrcode = [
-    "qrcode",
-]
-
 [project.urls]
 Homepage = "https://github.com/django-otp/django-otp-agents"
 Documentation = "https://django-otp-agents.readthedocs.io/"
