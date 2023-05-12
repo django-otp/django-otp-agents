@@ -19,5 +19,8 @@ jobs:
       - name: Install hatch
         run: pipx install hatch
 
-      - name: Run Tests
+      - name: Run tests
         run: hatch run test:run
+
+      - name: Build docs
+        run: hatch run docs:make
