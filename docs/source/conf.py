@@ -61,8 +61,8 @@ django.setup()
 
 intersphinx_mapping = {
     'python': ('http://docs.python.org/3/', None),
-    'django': ('https://docs.djangoproject.com/en/1.11/',
-               'https://docs.djangoproject.com/en/1.11/_objects/'),
+    'django': ('https://docs.djangoproject.com/en/4.2/',
+               'https://docs.djangoproject.com/en/4.2/_objects/'),
     'django-otp': ('http://django-otp-official.readthedocs.io/en/latest/', None),
     'django-agent-trust': ('http://django-agent-trust-official.readthedocs.io/en/latest/', None),
 }

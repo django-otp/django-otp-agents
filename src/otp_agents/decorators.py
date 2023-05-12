@@ -5,7 +5,17 @@ import django_otp.conf
 from django_otp.decorators import otp_required as real_otp_required
 
 
-def otp_required(view=None, redirect_field_name='next', login_url=None, if_configured=False, accept_trusted_agent=False):
+def _noop(f):
+    return f
+
+
+def otp_required(
+    view=None,
+    redirect_field_name='next',
+    login_url=None,
+    if_configured=False,
+    accept_trusted_agent=False,
+):
     """
     Similar to :func:`~django_otp.decorators.otp_required`, but with an extra
     argument.
@@ -17,16 +27,25 @@ def otp_required(view=None, redirect_field_name='next', login_url=None, if_confi
     :param bool accept_trusted_agent: If ``True``, we'll accept a trusted
         agent in lieu of OTP verification. Default is ``False``.
     """
+
     def decorator(view_func):
         @wraps(view_func)
         def _wrapped_view(request, *args, **kwargs):
             if accept_trusted_agent and request.agent.is_trusted:
-                _decorator = lambda v: v
+                _decorator = _noop
             else:
                 _login_url = login_url
                 if _login_url is None:
-                    _login_url = django_agent_trust.conf.settings.AGENT_LOGIN_URL if accept_trusted_agent else django_otp.conf.settings.OTP_LOGIN_URL
-                _decorator = real_otp_required(redirect_field_name=redirect_field_name, login_url=_login_url, if_configured=if_configured)
+                    _login_url = (
+                        django_agent_trust.conf.settings.AGENT_LOGIN_URL
+                        if accept_trusted_agent
+                        else django_otp.conf.settings.OTP_LOGIN_URL
+                    )
+                _decorator = real_otp_required(
+                    redirect_field_name=redirect_field_name,
+                    login_url=_login_url,
+                    if_configured=if_configured,
+                )
 
             return _decorator(view_func)(request, *args, **kwargs)
 

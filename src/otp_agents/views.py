@@ -9,6 +9,7 @@ class LoginView(django_otp.views.LoginView):
     our agent-trust-enabled forms.
 
     """
+
     otp_authentication_form = OTPAuthenticationForm
     otp_token_form = OTPTokenForm
 

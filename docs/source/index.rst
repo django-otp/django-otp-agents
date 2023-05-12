@@ -2,6 +2,7 @@ django-otp-agents
 =================
 
 .. include:: ../../README.rst
+   :end-before: .. end-of-doc-intro
 
 
 Installation

@@ -1,8 +1,7 @@
-import django
-from django.contrib.auth.signals import user_logged_in
-
 from django_agent_trust import trust_agent, trust_session
 
+import django
+from django.contrib.auth.signals import user_logged_in
 
 if django.VERSION < (3, 2):
     default_app_config = 'otp_agents.apps.DefaultConfig'

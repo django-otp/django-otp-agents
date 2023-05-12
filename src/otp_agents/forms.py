@@ -14,9 +14,9 @@ verification may then use
 :func:`~django_agent_trust.decorators.trusted_agent_required` in place of
 :func:`~django_otp.decorators.otp_required`.
 """
-from django import forms
-
 import django_otp.forms
+
+from django import forms
 
 
 class OTPAgentFormMixin(object):
@@ -35,6 +35,7 @@ class OTPAuthenticationForm(django_otp.forms.OTPAuthenticationForm, OTPAgentForm
     Extends :class:`~django_otp.forms.OTPAuthenticationForm` with support for
     agent trust.
     """
+
     otp_trust_agent = forms.BooleanField(required=False, label="Trust this agent")
 
     def clean(self):
@@ -49,6 +50,7 @@ class OTPTokenForm(django_otp.forms.OTPTokenForm, OTPAgentFormMixin):
     Extends :class:`~django_otp.forms.OTPTokenForm` with support for agent
     trust.
     """
+
     otp_trust_agent = forms.BooleanField(required=False, label="Trust this agent")
 
     def clean(self):

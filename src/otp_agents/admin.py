@@ -18,6 +18,8 @@ class TrustedAgentAdminSite(django_otp.admin.OTPAdminSite):
     admin site.
 
     """
+
     def has_permission(self, request):
-        return super(django_otp.admin.OTPAdminSite, self).has_permission(request) and \
-            (request.user.is_verified() or request.agent.is_trusted)
+        return super(django_otp.admin.OTPAdminSite, self).has_permission(request) and (
+            request.user.is_verified() or request.agent.is_trusted
+        )

@@ -1,8 +1,8 @@
+from django_otp.tests import TestCase
+
 from django.apps import apps
 from django.db import IntegrityError
 from django.test import override_settings
-
-from django_otp.tests import TestCase
 
 
 @override_settings(ROOT_URLCONF='otp_agents.test.urls')
