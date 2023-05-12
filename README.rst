@@ -13,6 +13,9 @@ django-otp.
 
 See `django-otp`_ for more information on the OTP framework.
 
+.. _django-agent-trust: http://pypi.org/project/django-agent-trust
+.. _django-otp: http://pypi.org/project/django-otp
+
 .. end-of-doc-intro
 
 
@@ -49,7 +52,3 @@ specific Python versions installed for this.
 
 You can clean up the hatch environments with ``hatch env prune``, for example to
 force dependency updates.
-
-
-.. _django-agent-trust: http://pypi.org/project/django-agent-trust
-.. _django-otp: http://pypi.org/project/django-otp
