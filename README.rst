@@ -52,3 +52,7 @@ specific Python versions installed for this.
 
 You can clean up the hatch environments with ``hatch env prune``, for example to
 force dependency updates.
+
+
+.. _hatch: https://hatch.pypa.io/
+.. _pipx: https://pypa.github.io/pipx/
