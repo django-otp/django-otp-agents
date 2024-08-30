@@ -14,6 +14,7 @@ verification may then use
 :func:`~django_agent_trust.decorators.trusted_agent_required` in place of
 :func:`~django_otp.decorators.otp_required`.
 """
+
 import django_otp.forms
 
 from django import forms
