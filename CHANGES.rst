@@ -1,5 +1,7 @@
-Unreleased - Tooling
+Unreleased - Tooling and Django 5.2
 --------------------------------------------------------------------------------
+
+Update test matrix for Django 5.2. No substantive changes.
 
 This project is now managed with `hatch`_, which replaces setuptools, pipenv,
 and tox. Users of the package should not be impacted. Developers can refer to
@@ -13,7 +15,6 @@ v1.0.1 - November 29, 2021 - Forward compatibility
 --------------------------------------------------------------------------------
 
 Default to AutoField to avoid spurious migrations.
-
 
 
 v1.0.0 - August 13, 2020 - Drop unsupported Python and Django versions
