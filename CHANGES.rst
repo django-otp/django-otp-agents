@@ -1,4 +1,4 @@
-Unreleased - Tooling and Django 5.2
+v1.1.0 - April 02, 2025 - Tooling and Django 5.2
 --------------------------------------------------------------------------------
 
 Update test matrix for Django 5.2. No substantive changes.
