@@ -1,4 +1,4 @@
-from django_otp.tests import TestCase
+from django_otp.test_utils import TestCase
 
 from django.apps import apps
 from django.db import IntegrityError
